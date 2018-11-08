@@ -5,12 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BoredRandomComponent } from './bored-random/bored-random.component';
+import { ActivityFormComponent } from './activity-form/activity-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BoredRandomComponent
+    ActivityFormComponent
   ],
   imports: [
     BrowserModule,

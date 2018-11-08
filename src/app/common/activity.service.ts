@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class BoredService {
+export class ActivityService {
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +17,6 @@ export class BoredService {
    * Get random activity
    */
   getRandom(): Observable<any> {
-
     return this.http.get<any>('/api/activity');
   }
 }
