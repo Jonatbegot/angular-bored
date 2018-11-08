@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivityService } from '../common/activity.service';
-import { FormBuilder, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
+/**
+ * Form component for edit or create new activities
+ * @export ActivityFormComponent Form component
+ * @class ActivityFormComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-activity-form',
   templateUrl: './activity-form.component.html',
@@ -9,6 +15,7 @@ import { FormBuilder, ValidatorFn, AbstractControl, ValidationErrors } from '@an
 })
 export class ActivityFormComponent implements OnInit {
 
+  // build form group
   activityForm = this.fb.group({
     activity: [''],
     accessibility: [''],
@@ -22,23 +29,20 @@ export class ActivityFormComponent implements OnInit {
   constructor(private fb: FormBuilder, private service: ActivityService) { }
 
   ngOnInit() {
-    this.service.getRandom().subscribe(res => {
-      this.activityForm.patchValue(res);
-    });
+    // get observable
+    this.service.getRandom()
+      // listen to new values
+      .subscribe(res => {
+        // update form group values
+        this.activityForm.patchValue(res);
+      });
   }
 
-  minDateValidator(minDate: Date): ValidatorFn {
-    return (control: AbstractControl): ValidationErrors | null => {
-      const { value } = control;
-      const date = new Date(value);
-
-      if (minDate.getTime() < date.getTime()) {
-        return null;
-      } else {
-        return { 'min': { value: control.value, expected: minDate } };
-
-      }
-    };
+  /**
+   * Submit form
+   */
+  onSubmit() {
+    console.log(this.activityForm.value);
   }
 
 }

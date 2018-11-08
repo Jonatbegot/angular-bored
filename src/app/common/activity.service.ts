@@ -5,10 +5,13 @@ import { Observable } from 'rxjs';
 /**
  * Http client service for Bored API:
  * https://www.boredapi.com/documentation
+ * @export ActivityService
+ * @class ActivityService
  */
 @Injectable({
   providedIn: 'root'
 })
+
 export class ActivityService {
 
   constructor(private http: HttpClient) { }
