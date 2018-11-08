@@ -6,11 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ActivityFormComponent } from './activity-form/activity-form.component';
+import { ActivityListComponent } from './activity-list/activity-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ActivityFormComponent
+    ActivityFormComponent,
+    ActivityListComponent
   ],
   imports: [
     BrowserModule,
