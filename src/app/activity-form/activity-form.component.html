@@ -1,7 +1,7 @@
 <div class="p-4">
   <app-acivity-random></app-acivity-random>
 </div>
-<form (ngSubmit)="activityForm.valid && onSubmit()" #form="ngForm" [formGroup]="activityForm">
+<form class="p-3" (ngSubmit)="activityForm.valid && onSubmit()" #form="ngForm" [formGroup]="activityForm">
   <div class="form-group">
     <label for="activity">Activity :</label>
     <input type="text" class="form-control" name="activity" formControlName="activity">
