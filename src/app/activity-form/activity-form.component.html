@@ -1,3 +1,6 @@
+<div class="p-4">
+  <app-acivity-random></app-acivity-random>
+</div>
 <form (ngSubmit)="activityForm.valid && onSubmit()" #form="ngForm" [formGroup]="activityForm">
   <div class="form-group">
     <label for="activity">Activity :</label>
@@ -27,6 +30,8 @@
     <label for="key">Key :</label>
     <input type="text" class="form-control" name="key" formControlName="key">
   </div>
-  <button type="reset" class="btn">reset</button>
-  <button type="submit" class="btn btn-primary">Send</button>
+  <div class="form-group d-flex justify-content-between">
+    <button type="reset" class="btn">reset</button>
+    <button type="submit" class="btn btn-primary">Send</button>
+  </div>
 </form>
