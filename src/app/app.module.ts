@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ActivityFormComponent } from './activity-form/activity-form.component';
 import { ActivityListComponent } from './activity-list/activity-list.component';
+import { AcivityRandomComponent } from './acivity-random/acivity-random.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ActivityFormComponent,
-    ActivityListComponent
+    ActivityListComponent,
+    AcivityRandomComponent
   ],
   imports: [
     BrowserModule,
